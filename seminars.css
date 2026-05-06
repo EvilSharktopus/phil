@@ -1,0 +1,247 @@
+/* ===== SEMINARS PAGE ===== */
+
+/* Nav override for dark nav on all pages */
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: rgba(10, 10, 12, 0.95);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.site-nav .logo {
+    font-family: 'Lora', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #d4af37;
+    letter-spacing: -0.05em;
+    text-decoration: none;
+}
+
+.site-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav .nav-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+}
+
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a.active {
+    color: #f0f0f0;
+}
+
+/* ---- HERO ---- */
+.seminars-hero {
+    background: linear-gradient(135deg, #0f0f18 0%, #1a1028 50%, #0a0a0c 100%);
+    padding: 6rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.eyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #d4af37;
+    margin-bottom: 0.75rem;
+}
+
+.seminars-hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin: 0;
+    animation: fadeUp 0.8s ease-out;
+}
+
+.subtitle {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #0a0a0c;
+    border: 1px solid #d4af37;
+}
+
+.btn-primary:hover {
+    background: #c9a228;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: #d4af37;
+}
+
+/* ---- FILM GRID ---- */
+.seminars-main {
+    background: #0a0a0c;
+    padding: 5rem 4rem;
+}
+
+.film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.75rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ---- FILM CARD ---- */
+.film-card {
+    display: block;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: #111116;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.film-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(212, 175, 55, 0.3);
+}
+
+.poster-wrap {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+}
+
+.poster-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.35s ease;
+}
+
+.film-card:hover .poster-wrap img {
+    transform: scale(1.05);
+    filter: brightness(0.45);
+}
+
+/* ---- OVERLAY ---- */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    text-align: center;
+}
+
+.film-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-title {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.card-cta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+/* ---- FOOTER ---- */
+.site-footer {
+    background: #070709;
+    text-align: center;
+    padding: 2.5rem;
+    color: #555;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.site-footer a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .site-nav {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .seminars-hero {
+        padding: 4rem 1.5rem 3rem;
+    }
+
+    .seminars-main {
+        padding: 3rem 1.5rem;
+    }
+
+    .film-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+}
