@@ -1,0 +1,98 @@
+/* ===== NOTES PAGE ===== */
+
+.notes-hero {
+    background: linear-gradient(135deg, #080f18 0%, #101828 50%, #0a0a0c 100%);
+    padding: 6rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.notes-hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin: 0;
+    animation: fadeUp 0.8s ease-out;
+}
+
+.notes-main {
+    background: #0a0a0c;
+    padding: 5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.notes-unit { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.notes-unit-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.notes-unit-icon {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    background: rgba(212,175,55,0.1);
+    border: 1px solid rgba(212,175,55,0.2);
+    display: flex; align-items: center; justify-content: center;
+    color: #d4af37; flex-shrink: 0; margin-top: 2px;
+}
+.notes-unit-icon svg { width: 22px; height: 22px; }
+
+.notes-unit-header h2 {
+    font-family: 'Lora', serif;
+    font-size: 1.6rem; font-weight: 600;
+    color: #fff; margin: 0 0 0.3rem;
+    letter-spacing: -0.02em;
+}
+
+.notes-unit-desc { color: #707070; font-size: 0.9rem; margin: 0; line-height: 1.5; }
+
+.notes-file-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.notes-file {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: #0f0f13;
+    text-decoration: none;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+.notes-file:hover {
+    background: rgba(212,175,55,0.06);
+    border-color: rgba(212,175,55,0.25);
+}
+
+.notes-file-icon {
+    width: 36px; height: 36px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.notes-file-icon svg { width: 18px; height: 18px; }
+.notes-file-icon.pdf { background: rgba(220,60,60,0.12); border: 1px solid rgba(220,60,60,0.2); color: #e05555; }
+.notes-file-icon.doc { background: rgba(60,120,220,0.12); border: 1px solid rgba(60,120,220,0.2); color: #5588e0; }
+
+.notes-file-info { flex: 1; display: flex; flex-direction: column; gap: 0.15rem; }
+.notes-file-name { color: #e0e0e0; font-size: 0.9rem; font-weight: 600; transition: color 0.25s; }
+.notes-file:hover .notes-file-name { color: #fff; }
+.notes-file-type { color: #555; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; }
+
+.notes-file-dl { color: #d4af37; font-size: 1.1rem; transition: transform 0.25s; flex-shrink: 0; }
+.notes-file:hover .notes-file-dl { transform: translateY(3px); }
+
+@media (max-width: 768px) {
+    .notes-hero { padding: 4rem 1.5rem 3rem; }
+    .notes-main { padding: 3rem 1.5rem; }
+}
