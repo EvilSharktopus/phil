@@ -269,6 +269,14 @@
 @media (max-width: 768px) {
     .site-nav {
         padding: 1.25rem 1.5rem;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .site-nav .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .seminars-hero {
