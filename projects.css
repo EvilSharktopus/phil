@@ -33,9 +33,9 @@
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 880px;
+    max-width: 1200px;
     width: 100%;
 }
 
@@ -135,6 +135,33 @@
 
 .project-card:hover .project-cta {
     letter-spacing: 0.22em;
+}
+
+/* ---- TAG (e.g. Religion Option) ---- */
+.project-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 20px;
+    padding: 0.2rem 0.7rem;
+    margin-top: -0.25rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+/* ---- FINAL PROJECT accent ---- */
+.project-card--final {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: linear-gradient(145deg, #151210 0%, #100e0a 100%);
+}
+
+.project-card--final .project-icon {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.35);
 }
 
 /* ---- RESPONSIVE ---- */
