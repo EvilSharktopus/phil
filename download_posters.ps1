@@ -2,28 +2,27 @@ $dir = "images\posters"
 New-Item -ItemType Directory -Force -Path $dir | Out-Null
 
 $posters = @(
-    @{ name = "concrete-utopia.jpg";    url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/695148256.jpg?1725036222" },
-    @{ name = "the-village.jpg";        url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/943427223.jpg?1631288331" },
-    @{ name = "arrival.jpg";            url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/961807760.jpg?1631722707" },
-    @{ name = "children-of-men.jpg";    url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/515701742.jpg?1631722609" },
-    @{ name = "eye-in-the-sky.jpg";     url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/800466320.jpg?1631722648" },
-    @{ name = "the-prestige.jpg";       url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/936057951.jpg?1631722704" },
-    @{ name = "district-9.jpg";         url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/891810675.jpg?1632323369" },
-    @{ name = "gattaca.png";            url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/262909853.png?1632323409" },
-    @{ name = "the-truman-show.jpg";    url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/213017504.jpg?1632323641" },
-    @{ name = "the-farewell.jpg";       url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/987442572.jpg?1632323908" },
-    @{ name = "the-matrix.jpg";         url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/473750016.jpg?1632323940" },
-    @{ name = "eeaao.png";              url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/published/592912544.png?1670008180" },
-    @{ name = "black-mirror.jpg";       url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/921005818.jpg?1632323993" },
-    @{ name = "after-yang.jpg";         url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/295916892.jpg?1662141025" },
-    @{ name = "minority-report.jpg";    url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/editor/326191438.jpg?1632323876" },
-    @{ name = "parental-advisory.jpg";  url = "https://outofkantrol.weebly.com/uploads/1/5/8/7/15876062/published/230216415.jpg?1670010739" }
+    @{ name = "concrete-utopia.jpg";         url = "https://image.tmdb.org/t/p/original/4l68KHxnPSow8MvnGUpjqLzJtLJ.jpg" },
+    @{ name = "the-village.jpg";             url = "https://image.tmdb.org/t/p/original/v7UvYtKfIVaHLaHwVgfalyrK7Ho.jpg" },
+    @{ name = "arrival.jpg";                 url = "https://image.tmdb.org/t/p/original/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg" },
+    @{ name = "children-of-men.jpg";         url = "https://image.tmdb.org/t/p/original/lQcXgb0fFzffnLV5WY0Q0X2WW7E.jpg" },
+    @{ name = "eye-in-the-sky.jpg";          url = "https://image.tmdb.org/t/p/original/faRGb9SuyGuZpsNRoIxoVSLLCId.jpg" },
+    @{ name = "the-prestige.jpg";            url = "https://image.tmdb.org/t/p/original/Ag2B2KHKQPukjH7WutmgnnSNurZ.jpg" },
+    @{ name = "exorcism-of-emily-rose.jpg";  url = "https://image.tmdb.org/t/p/original/qMN0HIP34f736kkQcfvTfmL9TP3.jpg" },
+    @{ name = "the-farewell.jpg";            url = "https://image.tmdb.org/t/p/original/7ht2IMGynDSVQGvAXhAb83DLET8.jpg" },
+    @{ name = "the-matrix.jpg";              url = "https://image.tmdb.org/t/p/original/aOIuZAjPaRIE6CMzbazvcHuHXDc.jpg" },
+    @{ name = "black-mirror.jpg";            url = "https://image.tmdb.org/t/p/original/y71DeJiAv0dV8H8hiFnuIuyc0Gx.jpg" },
+    @{ name = "after-yang.jpg";              url = "https://image.tmdb.org/t/p/original/qjEuDeKOhA7JqaaqhLSfoS9titb.jpg" },
+    @{ name = "minority-report.jpg";         url = "https://image.tmdb.org/t/p/original/ccqpHq5tk5W4ymbSbuoy4uYOxFI.jpg" },
+    @{ name = "parental-advisory.jpg";       url = "https://image.tmdb.org/t/p/original/v3pkqNnJwPIkIp9jpnyCjKTeein.jpg" }
 )
 
 foreach ($poster in $posters) {
     $dest = Join-Path $dir $poster.name
     Write-Host "Downloading $($poster.name)..."
     Invoke-WebRequest -Uri $poster.url -OutFile $dest -UseBasicParsing
+    $size = (Get-Item $dest).Length
+    Write-Host "  -> $([math]::Round($size/1KB, 1)) KB"
 }
 
 Write-Host "`nAll $($posters.Count) posters downloaded to .\$dir"
