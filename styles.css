@@ -1,0 +1,152 @@
+:root {
+    --bg-color: #0a0a0c;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --accent: #d4af37;
+    --font-heading: 'Lora', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: radial-gradient(circle at center, #1a1a24 0%, #0a0a0c 100%);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.05em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 5vw;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    animation: fadeUp 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    animation: fadeUp 1s ease-out 0.2s backwards;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    background: transparent;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+    animation: fadeUp 1s ease-out 0.4s backwards;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.featured-thought {
+    padding: 10rem 2rem;
+    text-align: center;
+    background: #0f0f13;
+}
+
+.featured-thought h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.quote-author {
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
