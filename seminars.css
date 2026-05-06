@@ -47,7 +47,9 @@
 
 /* ---- HERO ---- */
 .seminars-hero {
-    background: linear-gradient(135deg, #0f0f18 0%, #1a1028 50%, #0a0a0c 100%);
+    background: 
+        linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(10,10,12,0.8) 80%, #0a0a0c 100%),
+        url('images/hero-greece.jpg') center center / cover no-repeat;
     padding: 6rem 4rem 5rem;
     display: flex;
     flex-direction: column;
